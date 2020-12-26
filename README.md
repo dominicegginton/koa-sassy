@@ -5,7 +5,7 @@
 [![npm](https://img.shields.io/npm/dt/koa-sassy?label=Downloads)](https://www.npmjs.com/package/koa-sassy)
 [![js-standard-style](https://img.shields.io/badge/Code%20Style-standard-brightgreen.svg)](http://standardjs.com)
 
-> :art: Modern Koa middleware for SASS
+> Modern Koa middleware for SASS
 
 ## Why
 
