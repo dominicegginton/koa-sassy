@@ -22,7 +22,7 @@
 npm i koa-sassy
 ```
 
-## Usage
+## Getting Started
 
 ``` js
 const Koa = require('koa')
