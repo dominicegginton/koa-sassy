@@ -14,7 +14,7 @@
 - Caches complied CSS for fast responses
 - Built-in [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) support
 - Cache-control header support
-- Easy to use API :package:
+- Easy to use API
 
 ## Install
 
