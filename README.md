@@ -38,7 +38,7 @@ app.listen(3000)
 
 ### Start Serving SASS
 
-To start compiling and serving SASS files pass **koa-sassy's** middleware to `app.use()`. **koa-sassy** comes with grate default options and makes complaining and serving SASS effortless.
+To start compiling and serving SASS files pass **koa-sassy** to `app.use()`. **koa-sassy** comes with grate default options and makes complaining and serving SASS effortless.
 
 ``` js
 app.use(sassy('/sass'))
@@ -56,9 +56,7 @@ This mounts your complied SASS to the `/stylesheets` path.
 
 ### Setting the Cache-Control HTTP Header
 
-The [cash-control header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) holds directives (instructions) for caching in both requests and responses and is used to determine how long a given resource is considered fresh
-
-**koa-sassy** makes it easy to control how long your stylesheet is considered fresh. Pass the maximum age in seconds in the `options.maxAge` perimeter
+The [Cash-Control](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) HTTP header is used to specify browser cashing policies in both client requests and server responses. Use the `options.maxAge` perimeter to pass the number of seconds you wish for clients to cache stylesheets for.
 
 ``` js
 app.use(sassy('/sass'), { maxAge: 3600 }) // 1 hour
@@ -68,7 +66,7 @@ app.use(sassy('/sass'), { maxAge: 3600 }) // 1 hour
 
 ### ETags and Request Freshness
 
-An [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) is a identifer assigned by a web server to a specific version of a resource, and passed to the client within the HTTP ETag header of the response. When the resource at a given URL is updated a new unique ETag is generated. **koa-sassy** uses the [**etag**](https://github.com/jshttp/etag) module to generate ETags.
+An [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) is a unique identifer assigned by the web server to a specific version of a resource then passed to the client within the HTTP ETag header of the response. When the resource is updated or changed a new unique ETag is generated. **koa-sassy** uses the [**etag**](https://github.com/jshttp/etag) module to generate ETags. 
 
 Request freshness is determined by matching the current resources ETag against the ETag received from the [If-None-Match](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/If-None-Match) HTTP request header. Fresh requests are responded with a status code of **304** (not modified) and stale requests are sent a status code of **200** along with the favicon in the response body. Support for ETags and freshness checking is built into **koa-sassy** by default.
 
