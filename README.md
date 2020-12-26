@@ -9,7 +9,7 @@
   <img src='https://img.shields.io/badge/Code%20Style-standard-brightgreen.svg'>
 </div>
 
-## Why
+## Features
 
 - Caches complied CSS for fast responses
 - Built-in [ETag](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag) support
